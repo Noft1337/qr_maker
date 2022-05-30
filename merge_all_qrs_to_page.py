@@ -105,6 +105,8 @@ def create_dir(path):
 def main():
     create_dir(WORKING_DIR)
     dirs = get_dirs()
+    if 'final_pages' in dirs:
+        dirs.remove('final_pages')
     run_through_dirs(dirs)
 
 
