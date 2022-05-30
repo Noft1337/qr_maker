@@ -1,19 +1,6 @@
 from PIL import Image, ImageFont, ImageDraw
-import io
 
-test = "8q0f"
-
-
-# def create_image(text):
-#     print('Imaging serial: {}\n\n'.format(text))
-#     img = Image.new('RGB', (200, 100), ())
-#     d = ImageDraw.Draw(img)
-#     d.text((20, 20), text, fill=(255, 0, 0))
-#     width, height = d.textsize(text)
-#     d.rectangle((0, 0, width + 3, height + 3), outline="red")
-#
-#     s = io.BytesIO()
-#     return img, s
+test = ''
 
 
 def create_image(text):

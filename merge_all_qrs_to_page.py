@@ -1,7 +1,6 @@
 from PIL import Image, ImageDraw, ImageFont
 import os
 
-DIMENSIONS = (670, 670)
 X = 120
 Y = 140
 WORKING_DIR = './images/final_pages/'
@@ -63,7 +62,7 @@ def get_image_path(image_name: str, dir_name: str):
 
 def validate_image(path_to_image):
     opened_image = Image.open(path_to_image)
-    return opened_image.size == DIMENSIONS
+    return opened_image.size[0] == opened_image.size[1]
 
 
 def merge(images: list, dir_name: str):
@@ -79,7 +78,7 @@ def merge(images: list, dir_name: str):
             i = 0
             page_num += 1
         image = Image.open(get_image_path(image, dir_name))
-        image.resize((700, 700))
+        image = image.resize((700, 700))
         image_pos = (X + (X + image.size[0]) * (i % 3), Y + (Y + image.size[1]) * int(i / 3))
         page = draw_qr_on_page(page, image_pos, image)
         i += 1
